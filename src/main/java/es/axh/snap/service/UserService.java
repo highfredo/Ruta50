@@ -1,23 +1,24 @@
 package es.axh.snap.service;
 
-import es.axh.snap.domain.Authority;
-import es.axh.snap.domain.User;
-import es.axh.snap.repository.AuthorityRepository;
-import es.axh.snap.repository.UserRepository;
-import es.axh.snap.security.SecurityUtils;
-import es.axh.snap.service.util.RandomUtil;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import javax.inject.Inject;
+
 import org.joda.time.DateTime;
-import org.joda.time.LocalDate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import javax.inject.Inject;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import es.axh.snap.domain.Authority;
+import es.axh.snap.domain.User;
+import es.axh.snap.repository.AuthorityRepository;
+import es.axh.snap.repository.UserRepository;
+import es.axh.snap.security.SecurityUtils;
+import es.axh.snap.service.util.RandomUtil;
 
 /**
  * Service class for managing users.

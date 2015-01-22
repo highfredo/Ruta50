@@ -1,7 +1,10 @@
 package es.axh.snap.config;
 
-import com.mongodb.Mongo;
-import es.axh.snap.config.oauth2.OAuth2AuthenticationReadConverter;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.inject.Inject;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
@@ -15,9 +18,9 @@ import org.springframework.data.mongodb.core.mapping.event.ValidatingMongoEventL
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
-import javax.inject.Inject;
-import java.util.ArrayList;
-import java.util.List;
+import com.mongodb.Mongo;
+
+import es.axh.snap.config.oauth2.OAuth2AuthenticationReadConverter;
 
 @Configuration
 @EnableMongoRepositories("es.axh.snap.repository")

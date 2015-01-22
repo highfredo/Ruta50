@@ -1,12 +1,14 @@
 package es.axh.snap.domain;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.validation.constraints.NotNull;
+
 import org.joda.time.LocalDateTime;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
-import javax.validation.constraints.NotNull;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Persist AuditEvent managed by the Spring Boot actuator

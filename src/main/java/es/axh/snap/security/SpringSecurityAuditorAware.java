@@ -1,8 +1,9 @@
 package es.axh.snap.security;
 
-import es.axh.snap.config.Constants;
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.stereotype.Component;
+
+import es.axh.snap.config.Constants;
 
 /**
  * Implementation of AuditorAware based on Spring Security.

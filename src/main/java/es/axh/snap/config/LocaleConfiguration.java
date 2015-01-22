@@ -1,6 +1,5 @@
 package es.axh.snap.config;
 
-import es.axh.snap.config.locale.AngularCookieLocaleResolver;
 import org.springframework.boot.bind.RelaxedPropertyResolver;
 import org.springframework.context.EnvironmentAware;
 import org.springframework.context.MessageSource;
@@ -12,6 +11,8 @@ import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
+
+import es.axh.snap.config.locale.AngularCookieLocaleResolver;
 
 @Configuration
 public class LocaleConfiguration extends WebMvcConfigurerAdapter implements EnvironmentAware {

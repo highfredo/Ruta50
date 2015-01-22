@@ -1,10 +1,11 @@
 package es.axh.snap.config;
 
-import es.axh.snap.aop.logging.LoggingAspect;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Profile;
+
+import es.axh.snap.aop.logging.LoggingAspect;
 
 @Configuration
 @EnableAspectJAutoProxy

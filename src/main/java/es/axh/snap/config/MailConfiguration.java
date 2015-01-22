@@ -1,5 +1,7 @@
 package es.axh.snap.config;
 
+import java.util.Properties;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.bind.RelaxedPropertyResolver;
@@ -8,8 +10,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
-
-import java.util.Properties;
 
 @Configuration
 public class MailConfiguration implements EnvironmentAware {
@@ -67,20 +67,7 @@ public class MailConfiguration implements EnvironmentAware {
         sendProperties.setProperty(PROP_STARTTLS, tls.toString());
         sendProperties.setProperty(PROP_TRANSPORT_PROTO, protocol);
         sender.setJavaMailProperties(sendProperties);
-        
-        /*
-        JavaMailSenderImpl sender = new JavaMailSenderImpl();
-        sender.setHost("send.one.com");
-        sender.setPort(25);
-        sender.setUsername("axh@alfarede.es");
-        sender.setPassword("password");
 
-        Properties sendProperties = new Properties();
-        sendProperties.setProperty(PROP_SMTP_AUTH, "true");
-        sendProperties.setProperty(PROP_STARTTLS, "true");
-        sendProperties.setProperty(PROP_TRANSPORT_PROTO, "smtp");
-        sender.setJavaMailProperties(sendProperties);
-        */
         return sender;
     }
 }

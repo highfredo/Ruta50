@@ -1,11 +1,11 @@
 package es.axh.snap.domain;
 
+import java.util.UUID;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.oauth2.common.OAuth2RefreshToken;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
-
-import java.util.UUID;
 
 @Document(collection = "T_OAUTH_AUTHENTICATION_REFRESH_TOKEN")
 public class OAuth2AuthenticationRefreshToken {

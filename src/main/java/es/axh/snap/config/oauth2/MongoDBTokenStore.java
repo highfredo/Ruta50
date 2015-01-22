@@ -1,9 +1,9 @@
 package es.axh.snap.config.oauth2;
 
-import es.axh.snap.domain.OAuth2AuthenticationAccessToken;
-import es.axh.snap.domain.OAuth2AuthenticationRefreshToken;
-import es.axh.snap.repository.OAuth2AccessTokenRepository;
-import es.axh.snap.repository.OAuth2RefreshTokenRepository;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.common.OAuth2RefreshToken;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
@@ -11,9 +11,10 @@ import org.springframework.security.oauth2.provider.token.AuthenticationKeyGener
 import org.springframework.security.oauth2.provider.token.DefaultAuthenticationKeyGenerator;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import es.axh.snap.domain.OAuth2AuthenticationAccessToken;
+import es.axh.snap.domain.OAuth2AuthenticationRefreshToken;
+import es.axh.snap.repository.OAuth2AccessTokenRepository;
+import es.axh.snap.repository.OAuth2RefreshTokenRepository;
 
 /**
  * A MongoDB implementation of the TokenStore.

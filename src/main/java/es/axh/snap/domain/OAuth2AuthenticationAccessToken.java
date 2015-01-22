@@ -1,13 +1,13 @@
 package es.axh.snap.domain;
 
+import java.io.Serializable;
+import java.util.UUID;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
-
-import java.io.Serializable;
-import java.util.UUID;
 
 @Document(collection = "T_OAUTH_AUTHENTICATION_ACCESS_TOKEN")
 public class OAuth2AuthenticationAccessToken implements Serializable {

@@ -3,18 +3,12 @@ package es.axh.snap.controllers;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.annotation.security.RolesAllowed;
-import javax.inject.Inject;
-import javax.servlet.http.HttpServletResponse;
-
-import org.hibernate.envers.Audited;
 import org.joda.time.DateTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,9 +20,6 @@ import es.axh.snap.domain.Authority;
 import es.axh.snap.domain.User;
 import es.axh.snap.repository.AuthorityRepository;
 import es.axh.snap.repository.UserRepository;
-import es.axh.snap.security.AuthoritiesConstants;
-import es.axh.snap.service.UserService;
-import es.axh.snap.service.util.RandomUtil;
 
 
 @RestController

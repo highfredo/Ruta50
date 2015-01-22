@@ -1,6 +1,12 @@
 package es.axh.snap.config.oauth2;
 
-import com.mongodb.DBObject;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.data.convert.ReadingConverter;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -10,7 +16,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.security.oauth2.provider.OAuth2Request;
 
-import java.util.*;
+import com.mongodb.DBObject;
 
 /**
  * Converter to deserialize back into an OAuth2Authentication Object made necessary because

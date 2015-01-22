@@ -1,10 +1,11 @@
 package es.axh.snap.repository;
 
-import es.axh.snap.domain.PersistentAuditEvent;
+import java.util.List;
+
 import org.joda.time.LocalDateTime;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import java.util.List;
+import es.axh.snap.domain.PersistentAuditEvent;
 
 /**
  * Spring Data MongoDB repository for the PersistentAuditEvent entity.

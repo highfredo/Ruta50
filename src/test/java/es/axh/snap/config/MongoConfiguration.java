@@ -1,12 +1,14 @@
 package es.axh.snap.config;
 
-import com.mongodb.Mongo;
-import cz.jirutka.spring.embedmongo.EmbeddedMongoBuilder;
+import java.io.IOException;
+import java.net.ServerSocket;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.io.IOException;
-import java.net.ServerSocket;
+import com.mongodb.Mongo;
+
+import cz.jirutka.spring.embedmongo.EmbeddedMongoBuilder;
 
 @Configuration
 public class MongoConfiguration {

@@ -1,11 +1,7 @@
 package es.axh.snap.config;
 
-import es.axh.snap.config.oauth2.MongoDBTokenStore;
-import es.axh.snap.repository.OAuth2AccessTokenRepository;
-import es.axh.snap.repository.OAuth2RefreshTokenRepository;
-import es.axh.snap.security.AjaxLogoutSuccessHandler;
-import es.axh.snap.security.AuthoritiesConstants;
-import es.axh.snap.security.Http401UnauthorizedEntryPoint;
+import javax.inject.Inject;
+
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.bind.RelaxedPropertyResolver;
 import org.springframework.context.EnvironmentAware;
@@ -24,7 +20,12 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import javax.inject.Inject;
+import es.axh.snap.config.oauth2.MongoDBTokenStore;
+import es.axh.snap.repository.OAuth2AccessTokenRepository;
+import es.axh.snap.repository.OAuth2RefreshTokenRepository;
+import es.axh.snap.security.AjaxLogoutSuccessHandler;
+import es.axh.snap.security.AuthoritiesConstants;
+import es.axh.snap.security.Http401UnauthorizedEntryPoint;
 
 @Configuration
 public class OAuth2ServerConfiguration {

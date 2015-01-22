@@ -1,11 +1,11 @@
 package es.axh.snap.repository;
 
-import es.axh.snap.domain.User;
+import java.util.List;
 
 import org.joda.time.DateTime;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import java.util.List;
+import es.axh.snap.domain.User;
 
 /**
  * Spring Data MongoDB repository for the User entity.

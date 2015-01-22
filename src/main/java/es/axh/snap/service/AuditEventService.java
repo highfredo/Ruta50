@@ -1,14 +1,16 @@
 package es.axh.snap.service;
 
-import es.axh.snap.config.audit.AuditEventConverter;
-import es.axh.snap.domain.PersistentAuditEvent;
-import es.axh.snap.repository.PersistenceAuditEventRepository;
+import java.util.List;
+
+import javax.inject.Inject;
+
 import org.joda.time.LocalDateTime;
 import org.springframework.boot.actuate.audit.AuditEvent;
 import org.springframework.stereotype.Service;
 
-import javax.inject.Inject;
-import java.util.List;
+import es.axh.snap.config.audit.AuditEventConverter;
+import es.axh.snap.domain.PersistentAuditEvent;
+import es.axh.snap.repository.PersistenceAuditEventRepository;
 
 /**
  * Service for managing audit events.

@@ -1,9 +1,10 @@
 package es.axh.snap.repository;
 
-import es.axh.snap.domain.OAuth2AuthenticationAccessToken;
+import java.util.List;
+
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import java.util.List;
+import es.axh.snap.domain.OAuth2AuthenticationAccessToken;
 
 /**
  * Spring Data MongoDB repository for the OAuth2AuthenticationAccessToken entity.

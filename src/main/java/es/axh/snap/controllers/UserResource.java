@@ -1,9 +1,9 @@
 package es.axh.snap.controllers;
 
-import com.codahale.metrics.annotation.Timed;
-import es.axh.snap.domain.User;
-import es.axh.snap.repository.UserRepository;
-import es.axh.snap.security.AuthoritiesConstants;
+import javax.annotation.security.RolesAllowed;
+import javax.inject.Inject;
+import javax.servlet.http.HttpServletResponse;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
@@ -12,9 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.security.RolesAllowed;
-import javax.inject.Inject;
-import javax.servlet.http.HttpServletResponse;
+import com.codahale.metrics.annotation.Timed;
+
+import es.axh.snap.domain.User;
+import es.axh.snap.repository.UserRepository;
+import es.axh.snap.security.AuthoritiesConstants;
 
 /**
  * REST controller for managing users.

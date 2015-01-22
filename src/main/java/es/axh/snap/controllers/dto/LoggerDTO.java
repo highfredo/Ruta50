@@ -1,6 +1,7 @@
 package es.axh.snap.controllers.dto;
 
 import ch.qos.logback.classic.Logger;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 
 public class LoggerDTO {

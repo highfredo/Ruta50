@@ -1,8 +1,10 @@
 package es.axh.snap.security;
 
-import es.axh.snap.domain.Authority;
-import es.axh.snap.domain.User;
-import es.axh.snap.repository.UserRepository;
+import java.util.ArrayList;
+import java.util.Collection;
+
+import javax.inject.Inject;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.GrantedAuthority;
@@ -12,9 +14,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.inject.Inject;
-import java.util.ArrayList;
-import java.util.Collection;
+import es.axh.snap.domain.Authority;
+import es.axh.snap.domain.User;
+import es.axh.snap.repository.UserRepository;
 
 /**
  * Authenticate a user from the database.
