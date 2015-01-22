@@ -86,6 +86,6 @@ angular.module('ruta50App', ['LocalStorageModule', 'tmh.dynamicLocale',
         $translateProvider.preferredLanguage('en');
         $translateProvider.useCookieStorage();
 
-        tmhDynamicLocaleProvider.localeLocationPattern('bower_components/angular-i18n/angular-locale_{{locale}}.js');
+        tmhDynamicLocaleProvider.localeLocationPattern('lib/angular-i18n/angular-locale_{{locale}}.js');
         tmhDynamicLocaleProvider.useCookieStorage('NG_TRANSLATE_LANG_KEY');
     });

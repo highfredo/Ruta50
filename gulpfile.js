@@ -167,7 +167,7 @@ gulp.task('usemin', ['images', 'styles'], function() {
 
 gulp.task('jshint', function() {
     return gulp.src(['gulpfile.js', yeoman.app + 'scripts/**/*.js'])
-        .pipe(jshint())
+        .pipe(jshint('.jshintrc'))
         .pipe(jshint.reporter('jshint-stylish'));
 });
 
