@@ -1,5 +1,7 @@
 package es.axh.snap.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -49,6 +51,11 @@ public class CreditCardResource {
 		} catch(Exception e) {
 			return new ResponseEntity<String>("{\"result\": \"KO\"}", HttpStatus.OK);
 		}
+	}
+	
+	@RequestMapping(value="payment/creditCard/list", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<CreditCard> listOwnCreditCard() {
+		return paymentService.listCreditCard();
 	}
 	
 }
