@@ -24,6 +24,10 @@ public class PaymentService {
 		return creditCardRepository.save(creditCard);		
 	}
 	
+	public CreditCard getCreditCard(String creditCardId) {
+		return creditCardRepository.findOne(creditCardId);
+	}
+	
 	public void deleteCreditCard(String creditCardId) {
 		creditCardRepository.delete(creditCardId);
 	}
