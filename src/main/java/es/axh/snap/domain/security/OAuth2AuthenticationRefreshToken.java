@@ -1,4 +1,4 @@
-package es.axh.snap.domain;
+package es.axh.snap.domain.security;
 
 import java.util.UUID;
 

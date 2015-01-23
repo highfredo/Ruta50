@@ -17,7 +17,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 
 import es.axh.snap.Application;
 import es.axh.snap.config.MongoConfiguration;
-import es.axh.snap.domain.User;
+import es.axh.snap.domain.security.User;
 import es.axh.snap.repository.UserRepository;
 
 /**

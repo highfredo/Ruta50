@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.codahale.metrics.annotation.Timed;
 import com.google.common.collect.Sets;
 
-import es.axh.snap.domain.Authority;
-import es.axh.snap.domain.User;
+import es.axh.snap.domain.security.Authority;
+import es.axh.snap.domain.security.User;
 import es.axh.snap.repository.AuthorityRepository;
 import es.axh.snap.repository.UserRepository;
 

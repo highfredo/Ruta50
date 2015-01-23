@@ -1,4 +1,4 @@
-package es.axh.snap.domain;
+package es.axh.snap.domain.security;
 
 import java.io.Serializable;
 import java.util.HashSet;
@@ -16,6 +16,8 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import es.axh.snap.domain.AbstractAuditingEntity;
+
 /**
  * A user.
  */
@@ -28,7 +30,7 @@ public class User extends AbstractAuditingEntity implements Serializable {
     @NotNull
     @Pattern(regexp = "^[a-z0-9]*$")
     @Size(min = 1, max = 50)
-    @Indexed
+    @Indexed(unique=true)
     private String login;
 
     @JsonIgnore
@@ -46,7 +48,7 @@ public class User extends AbstractAuditingEntity implements Serializable {
 
     @Email
     @Size(max = 100)
-    @Indexed
+    @Indexed(unique=true)
     private String email;
 
     private boolean activated = false;

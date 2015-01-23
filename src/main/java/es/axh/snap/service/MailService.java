@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.spring4.SpringTemplateEngine;
 
-import es.axh.snap.domain.User;
+import es.axh.snap.domain.security.User;
 
 /**
  * Service for sending e-mails.

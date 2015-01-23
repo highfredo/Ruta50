@@ -14,8 +14,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import es.axh.snap.domain.Authority;
-import es.axh.snap.domain.User;
+import es.axh.snap.domain.security.Authority;
+import es.axh.snap.domain.security.User;
 import es.axh.snap.repository.UserRepository;
 
 /**
