@@ -18,7 +18,7 @@ public class CreditCard extends AbstractDocument {
 	private DateTime expirationDate;
 	
 	private String ownerName;
-	private String hoseNumber;
+	private String houseNumber;
 	private String street;
 	private String city;
 	private String state;
