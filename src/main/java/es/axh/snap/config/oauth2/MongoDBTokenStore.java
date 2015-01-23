@@ -11,8 +11,8 @@ import org.springframework.security.oauth2.provider.token.AuthenticationKeyGener
 import org.springframework.security.oauth2.provider.token.DefaultAuthenticationKeyGenerator;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 
-import es.axh.snap.domain.OAuth2AuthenticationAccessToken;
-import es.axh.snap.domain.OAuth2AuthenticationRefreshToken;
+import es.axh.snap.domain.security.OAuth2AuthenticationAccessToken;
+import es.axh.snap.domain.security.OAuth2AuthenticationRefreshToken;
 import es.axh.snap.repository.OAuth2AccessTokenRepository;
 import es.axh.snap.repository.OAuth2RefreshTokenRepository;
 

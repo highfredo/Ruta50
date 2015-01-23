@@ -13,8 +13,8 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import es.axh.snap.domain.Authority;
-import es.axh.snap.domain.User;
+import es.axh.snap.domain.security.Authority;
+import es.axh.snap.domain.security.User;
 import es.axh.snap.repository.AuthorityRepository;
 import es.axh.snap.repository.UserRepository;
 import es.axh.snap.security.SecurityUtils;

@@ -1,4 +1,4 @@
-package es.axh.snap.domain;
+package es.axh.snap.domain.security;
 
 import java.io.Serializable;
 import java.util.HashSet;
@@ -15,6 +15,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import es.axh.snap.domain.AbstractAuditingEntity;
 
 /**
  * A user.

@@ -5,7 +5,7 @@ import java.util.List;
 import org.joda.time.DateTime;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import es.axh.snap.domain.User;
+import es.axh.snap.domain.security.User;
 
 /**
  * Spring Data MongoDB repository for the User entity.
