@@ -1,6 +1,7 @@
 package es.axh.snap.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import es.axh.snap.controllers.ActivityTemplate;
 import es.axh.snap.domain.CreditCard;
@@ -9,6 +10,7 @@ import es.axh.snap.repository.ActivityTemplateRepository;
 import es.axh.snap.repository.CreditCardRepository;
 import es.axh.snap.repository.PaymentInfoRepository;
 
+@Service
 public class PaymentService {
 	
 	@Autowired

@@ -30,7 +30,7 @@ public class User extends AbstractAuditingEntity implements Serializable {
     @NotNull
     @Pattern(regexp = "^[a-z0-9]*$")
     @Size(min = 1, max = 50)
-    @Indexed(unique=true)
+    @Indexed
     private String login;
 
     @JsonIgnore
@@ -48,7 +48,7 @@ public class User extends AbstractAuditingEntity implements Serializable {
 
     @Email
     @Size(max = 100)
-    @Indexed(unique=true)
+    @Indexed
     private String email;
 
     private boolean activated = false;

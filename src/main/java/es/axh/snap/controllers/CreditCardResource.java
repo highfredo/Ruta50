@@ -15,7 +15,7 @@ public class CreditCardResource {
 	// @RequestMapping("payment/creditCard/{credictCardId}") GET, POST, DELETE
 	// @RequestMapping("payment/creditCard/list") GET
 	// @RequestMapping("payment/pay/{paymentInfoId}") GET, POST
-	
+	/*
 	@Autowired
 	private PaymentService paymentService;
 	
@@ -25,5 +25,5 @@ public class CreditCardResource {
 		
 		return resultCreditCard;
 	}
-	
+	*/
 }
