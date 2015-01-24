@@ -65,6 +65,13 @@ public class BundleService {
 		
 		Double price = prices.get(bundleNumber);
 		
+		List<Route> routes = routesByBundlePrice(bundle, price);
+		
+		return routes;
+		
+	}
+
+	public List<Route> routesByBundlePrice(Bundle bundle, Double price) {
 		List<Route> routes = new ArrayList<Route>();
 		
 		for(Route route : bundle.getRoutes()){
@@ -74,9 +81,7 @@ public class BundleService {
 		}
 		
 		Collections.sort(routes);
-		
 		return routes;
-		
 	}
 	
 }
