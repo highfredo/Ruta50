@@ -1,7 +1,64 @@
 			
  <div class="row">
  
-	{{creditCard.id}}
+	<form class="form" novalidate name="payForm" role="form">
+               	
+               	<div class = "panel panel-default col-md-6 col-md-offset-3">
+	               	<div class = "panel-heading">
+	               		<h4>Datos de la tarjeta de credito</h4>
+	               	</div>
+	               	<div class = "panel-body">
+		                <div class="form-group">
+		                    <label for="number" >Numero</label>
+		                    <input type="text" class="form-control" id="number" placeholder="" ng-model="number">
+		                </div>
+		                <div class="form-group">
+		                    <label for="expirationDate" >Fecha de caducidad</label>
+		                    <input type="text" class="form-control" id="expirationDate" placeholder="" ng-model="expirationDate">
+		                </div>
+		                <div class="form-group">
+		                    <label for="ownerName" >Dueño de la tarjeta</label>
+		                    <input type="text" class="form-control" id="ownerName" placeholder="" ng-model="ownerName">
+		                </div>
+	                </div>
+                </div>
+                
+                <div class = "panel panel-default col-md-6 col-md-offset-3">
+                	<div class = "panel-heading">
+	               		<h4>Datos del usuario</h4>
+	               	</div>
+	               	<div class = "panel-body">
+		                <div class="form-group">
+		                    <label for="houseNumber" >Numero de casa</label>
+		                    <input type="text" class="form-control" id="houseNumber" placeholder="" ng-model="houseNumber">
+		                </div>
+		                <div class="form-group">
+		                    <label for="street" >Calle</label>
+		                    <input type="text" class="form-control" id="street" placeholder="" ng-model="street">
+		                </div>
+		                <div class="form-group">
+		                    <label for="city" >Ciudad</label>
+		                    <input type="text" class="form-control" id="city" placeholder="" ng-model="city">
+		                </div>
+		                <div class="form-group">
+		                    <label for="state" >Estado</label>
+		                    <input type="text" class="form-control" id="state" placeholder="" ng-model="state">
+		                </div>
+		                 <div class="form-group">
+		                    <label for="postalCode" >Codigo Postal</label>
+		                    <input type="text" class="form-control" id="postalCode" placeholder="" ng-model="postalCode">
+		                </div>
+		                 <div class="form-group">
+		                    <label for="country" >Pais</label>
+		                    <input type="text" class="form-control" id="country" placeholder="" ng-model="country">
+		                </div>
+		                 <button type="submit" class="btn btn-primary" ng.disabled="!payForm.$valid" ng-click="pay()" >Comprar</button>
+		                 {{payError}}
+                	</div>
+                <div>
+                
+               
+     		</form>
 	
   </div>
 
