@@ -47,7 +47,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .antMatchers("/api/register")
             .antMatchers("/api/activate")
             .antMatchers("/test/**")
-            .antMatchers("/foo/**");
+            .antMatchers("/foo/**")
+            .antMatchers("/api/public/**");
     }
 
     @Override

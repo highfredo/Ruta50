@@ -22,7 +22,7 @@ public class BundleResource {
 	@Inject
 	private BundleService bundleService;
 
-	@RequestMapping(value = "/bundles", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/public/bundles", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Bundle> findAll() {
 		return bundleService.findAll();
 	}
