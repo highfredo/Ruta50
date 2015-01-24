@@ -1,5 +1,9 @@
 package es.axh.snap.service;
 
+import java.io.UnsupportedEncodingException;
+
+import org.apache.commons.codec.binary.Base64;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -40,7 +44,11 @@ public class SnapService {
 	
 	public JSONObject pay(AuthorizeAndCaptureTransaction authorizeAndCaptureTransaction) {
 		String sessionToken = this.login() + ":";  
+
 		// sessionToken = Base64.getEncoder().encodeToString(sessionToken.getBytes());
+		sessionToken = Base64.encodeBase64String(sessionToken.getBytes());
+		System.out.println(sessionToken);
+
 		RestTemplate restTemplate = new RestTemplate();
 
 		HttpHeaders headers = new HttpHeaders();
@@ -51,19 +59,15 @@ public class SnapService {
 		HttpEntity<AuthorizeAndCaptureTransaction> entity = 
 				new HttpEntity<AuthorizeAndCaptureTransaction>(authorizeAndCaptureTransaction, headers);
 		
-		ResponseEntity<JSONObject> response = restTemplate.postForEntity(PAY_URL, entity, JSONObject.class);
-						
-		return response.getBody();
+		ResponseEntity<String> response = restTemplate.postForEntity(PAY_URL, entity, String.class);
+		JSONObject result = null;
+		try {
+			result = new JSONObject(response.getBody());
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+				
+		return result; 
 	}
 
 }
-
-/*
-RestTemplate restTemplate = new RestTemplate();
-HttpHeaders headers = new HttpHeaders();
-headers.setContentType(MediaType.APPLICATION_JSON);
-
-HttpEntity<AuthorizeAndCaptureTransaction> entity = 
-		new HttpEntity<AuthorizeAndCaptureTransaction>(authorizeAndCaptureTransaction, headers);
-restTemplate.put(uRL, entity);
-*/

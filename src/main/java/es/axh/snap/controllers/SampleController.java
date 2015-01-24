@@ -1,5 +1,6 @@
 package es.axh.snap.controllers;
 
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,11 +18,9 @@ public class SampleController {
 	private SnapService snapService;
 	
     @RequestMapping(value = "/get", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public AuthorizeAndCaptureTransaction sample() {
-    	
-    	snapService.pay(new AuthorizeAndCaptureTransaction());
-    	
-        return new AuthorizeAndCaptureTransaction();
+    public JSONObject sample() {
+    	    	
+        return snapService.pay(new AuthorizeAndCaptureTransaction());
     }
 
 
