@@ -21,7 +21,7 @@ import es.axh.snap.config.Constants;
  */
 @Aspect
 public class LoggingAspect {
-
+/*
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Inject
@@ -60,5 +60,5 @@ public class LoggingAspect {
 
             throw e;
         }
-    }
+    }*/
 }
