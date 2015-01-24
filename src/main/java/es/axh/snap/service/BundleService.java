@@ -65,18 +65,23 @@ public class BundleService {
 		
 		Double price = prices.get(bundleNumber);
 		
+		List<Route> routes = routesByBundlePrice(bundle, price);
+		
+		return routes;
+		
+	}
+
+	public List<Route> routesByBundlePrice(Bundle bundle, Double price) {
 		List<Route> routes = new ArrayList<Route>();
 		
 		for(Route route : bundle.getRoutes()){
-			if(price.compareTo(route.getPrice()) > 0){
+			if(price.compareTo(route.getPrice()) >= 0){
 				routes.add(route);
 			}
 		}
 		
 		Collections.sort(routes);
-		
 		return routes;
-		
 	}
 	
 }
