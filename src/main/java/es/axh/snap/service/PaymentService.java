@@ -1,9 +1,6 @@
 package es.axh.snap.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.AccessDeniedException;
 import org.springframework.stereotype.Service;
 
 import es.axh.snap.controllers.ActivityTemplate;
@@ -12,7 +9,6 @@ import es.axh.snap.domain.PaymentInfo;
 import es.axh.snap.repository.ActivityTemplateRepository;
 import es.axh.snap.repository.CreditCardRepository;
 import es.axh.snap.repository.PaymentInfoRepository;
-import es.axh.snap.security.SecurityUtils;
 
 @Service
 public class PaymentService {
@@ -24,28 +20,6 @@ public class PaymentService {
 	@Autowired
 	public ActivityTemplateRepository activityTemplateRepository;
 	
-	public CreditCard saveCreditCard(CreditCard creditCard) {
-		return creditCardRepository.save(creditCard);		
-	}
-	
-	public CreditCard getCreditCard(String creditCardId) {
-		CreditCard creditCard = creditCardRepository.findOne(creditCardId);
-		
-		if(creditCard == null) return creditCard;
-		
-		if(!creditCard.getCreatedBy().equals(SecurityUtils.getCurrentLogin()))
-			throw new AccessDeniedException("No tienes permisos para ver esa tarjeta de credito.");
-		
-		return creditCardRepository.findOne(creditCardId);
-	}
-	
-	public void deleteCreditCard(String creditCardId) {
-		creditCardRepository.delete(creditCardId);
-	}
-	
-	public List<CreditCard> listCreditCard() {
-		return creditCardRepository.findByCreatedBy(SecurityUtils.getCurrentLogin());
-	}
 	
 	public PaymentInfo pay(String credictCardId, String activityId, Integer numberOfTickets) {
 		PaymentInfo paymentInfo = new PaymentInfo();
