@@ -1,4 +1,15 @@
 
+<div class="alert alert-info" role="alert" ng-if="isAuthenticated()">
+	
+	
+	Precio <input type="number" ng-model = "price"  />
+	Numero de personas: <input type="number" ng-model = "numberOfPerson"  />
+	
+	Precio total = {{price * numberOfPerson}}
+	
+	<a class='btn btn-default' ng-href="/#/compra/{{bundle.id}}/{{price}}/{{numberOfPerson}}">Comprar</a>
+</div>
+
 <div class="row">
 	<div class="col-md-10 col-md-offset-1">
 		<div class="panel panel-default ">
@@ -14,7 +25,7 @@
 		<div class="col-md-6" ng-repeat="route in bundle.routes| orderBy : route.price : reverse">
 				<div class="panel panel-default">
 					<div class="panel-thumbnail text-center">
-						<img src="{{route.photo}}"
+						<img ng-src="{{route.photo}}"
 							class="img-responsive">
 					</div>
 					<div class="panel-body">

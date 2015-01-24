@@ -1,12 +1,14 @@
 'use strict';
 
-'use strict';
-
 angular.module('ruta50App')
-    .controller('CreditCardController', function ($scope,CreditCard) {
+    .controller('CreditCardController', function ($scope, CreditCard, $stateParams) {
             
             $scope.pay = function () {
             	CreditCard.save({
+            	bundleId: $stateParams.id,
+            	maxPrecio: $stateParams.price,
+            	numberOfPeople: $stateParams.numberOfPerson,
+            	creditCard: {
                    
                 	number: $scope.number,
                 	expirationDate: $scope.expirationDate,
@@ -18,7 +20,7 @@ angular.module('ruta50App')
                 	postalCode: $scope.postalCode,
                 	country: $scope.country,
                 
-                }).then(function () {
+                }}).then(function () {
                     $scope.payError = false;
                     $rootScope.back();
                 }).catch(function () {
