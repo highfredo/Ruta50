@@ -34,7 +34,7 @@ public class SnapService {
 		
 		ResponseEntity<String> response = restTemplate.exchange(LOGIN_URL, HttpMethod.GET, entity, String.class);
 		String result = response.getBody().replaceAll("\"", "");
-		
+		reverse
 		return result;
 	}
 	

@@ -3,7 +3,7 @@
 angular.module('ruta50App')
     .config(function ($stateProvider) {
         $stateProvider
-            .state('home', {
+            .state('home2', {
                 parent: 'site',
                 url: '/',
                 data: {
