@@ -3,8 +3,8 @@ package es.axh.snap.controllers;
 import java.util.List;
 
 import javax.annotation.security.RolesAllowed;
+import javax.inject.Inject;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,7 +19,7 @@ import es.axh.snap.service.BundleService;
 @RequestMapping("/api")
 public class BundleResource {
 
-	@Autowired
+	@Inject
 	private BundleService bundleService;
 
 	@RequestMapping(value = "/bundles", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -27,13 +27,13 @@ public class BundleResource {
 		return bundleService.findAll();
 	}
 
-	@RequestMapping(value = "/bundles/search", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	@RolesAllowed(AuthoritiesConstants.USER)
-	public List<Bundle> search(@RequestParam(value = "query") String query) {
-		return bundleService.findByQuery(query);
-	}
+//	@RequestMapping(value = "/bundles/search/{query}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+//	@RolesAllowed(AuthoritiesConstants.USER)
+//	public List<Bundle> search(@RequestParam(value = "query") String query) {
+//		return bundleService.findByQuery(query);
+//	}
 
-	@RequestMapping(value = "/bundle/view", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/bundle/view/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	@RolesAllowed(AuthoritiesConstants.USER)
 	public Bundle view(@RequestParam(value = "id") String id) {
 		return bundleService.view(id);
@@ -45,7 +45,7 @@ public class BundleResource {
 		return bundleService.create();
 	}
 	
-	@RequestMapping(value = "/bundle/edit", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/bundle/edit/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	@RolesAllowed(AuthoritiesConstants.USER)
 	public Bundle edit(@RequestParam(value = "id") String id) {
 		return bundleService.edit(id);

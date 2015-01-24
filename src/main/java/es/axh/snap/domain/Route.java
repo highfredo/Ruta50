@@ -1,5 +1,7 @@
 package es.axh.snap.domain;
 
+import org.springframework.data.mongodb.core.index.TextIndexed;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -7,7 +9,8 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper=false)
 public class Route {
 
-	private String description;
+	private @TextIndexed String description;
 	private Double price;
+	private String photo;
 	
 }

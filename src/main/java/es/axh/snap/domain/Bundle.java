@@ -5,6 +5,7 @@ import java.util.List;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import org.springframework.data.mongodb.core.index.TextIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
@@ -12,9 +13,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class Bundle extends AbstractDocument{
 
-	private String name;
-	private String description;
-	private String city;
+	private @TextIndexed String name;
+	private @TextIndexed String description;
+	private @TextIndexed String city;
 	private List<Route> routes;
-	private List<String> tags;
+//	private @TextIndexed List<String> tags;
+	
 }
