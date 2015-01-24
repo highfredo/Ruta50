@@ -1,55 +1,16 @@
-			
  <div class="row">
-{{creditCard.id}}
-	<div class="col-md-12 col-sm-12">
-		<div class="col-md-4 col-sm-6">
-	        <div class="panel panel-default">
-	          <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Bootstrap Examples</h4></div>
-	   			<div class="panel-body">
-	              <div class="list-group">
-	                <a href="http://bootply.com/tagged/modal" class="list-group-item">Modal / Dialog</a>
-	                <a href="http://bootply.com/tagged/datetime" class="list-group-item">Datetime Examples</a>
-	                <a href="http://bootply.com/tagged/datatable" class="list-group-item">Data Grids</a>
-	              </div>
-	            </div>
-	   		</div>
-	   	</div>
-	   	<div class="col-md-4 col-sm-6">
-	        <div class="panel panel-default">
-	          <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Bootstrap Examples</h4></div>
-	   			<div class="panel-body">
-	              <div class="list-group">
-	                <a href="http://bootply.com/tagged/modal" class="list-group-item">Modal / Dialog</a>
-	                <a href="http://bootply.com/tagged/datetime" class="list-group-item">Datetime Examples</a>
-	                <a href="http://bootply.com/tagged/datatable" class="list-group-item">Data Grids</a>
-	              </div>
-	            </div>
-	   		</div>
-	   	</div>
-	   	<div class="col-md-4 col-sm-6">
-	        <div class="panel panel-default">
-	          <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Bootstrap Examples</h4></div>
-	   			<div class="panel-body">
-	              <div class="list-group">
-	                <a href="http://bootply.com/tagged/modal" class="list-group-item">Modal / Dialog</a>
-	                <a href="http://bootply.com/tagged/datetime" class="list-group-item">Datetime Examples</a>
-	                <a href="http://bootply.com/tagged/datatable" class="list-group-item">Data Grids</a>
-	              </div>
-	            </div>
-	   		</div>
-	   	</div>
-	   	<div class="col-md-4 col-sm-6">
-	        <div class="panel panel-default">
-	          <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Bootstrap Examples</h4></div>
-	   			<div class="panel-body">
-	              <div class="list-group">
-	                <a href="http://bootply.com/tagged/modal" class="list-group-item">Modal / Dialog</a>
-	                <a href="http://bootply.com/tagged/datetime" class="list-group-item">Datetime Examples</a>
-	                <a href="http://bootply.com/tagged/datatable" class="list-group-item">Data Grids</a>
-	              </div>
-	            </div>
-	   		</div>
-	   	</div>
-       </div>
-  </div>
+
+	<div class="col-sm-6 col-xs-12" ng-repeat= "bundle in bundles">
+       <a href = "/#/bundle/{{bundle.id}}" >
+        <div class="panel panel-default">
+        
+          <div class="panel-thumbnail"><img src="{{bundle.routes[0].photo}}" class="img-responsive"></div>
+          <div class="panel-body">
+            <p class="lead">{{bundle.name}}</p>
+            <p>{{bundle.city}}</p>
+          </div>
+        </div>
+       </a> 
+      </div>
+</div>
 
