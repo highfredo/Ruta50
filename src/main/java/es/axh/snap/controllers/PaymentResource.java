@@ -21,10 +21,10 @@ public class PaymentResource {
 	
 	@RequestMapping(value = "/pay", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public PaymentInfo pay(@RequestBody CreditCard creditCard, @RequestParam String bundleId,
-    		@RequestParam Integer level,
+    		@RequestParam Double maxPrecio,
     		@RequestParam(defaultValue="1") Integer numberOfPeople) {
 		
-        return paymentService.pay(creditCard, bundleId, level, numberOfPeople);
+        return paymentService.pay(creditCard, bundleId, maxPrecio, numberOfPeople);
     }
 
 }

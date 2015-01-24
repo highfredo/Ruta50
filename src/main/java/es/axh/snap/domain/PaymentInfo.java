@@ -16,7 +16,7 @@ public class PaymentInfo extends AbstractDocument {
 	private CreditCard creditCard;
 	private Bundle bundle;
 	private List<Route> routesTodo; 
-	private Integer level;
+	private Double maxPrecio;
 	private Integer numberOfPeople;
 	private JSONObject snapResponse;
 	private Double amount;

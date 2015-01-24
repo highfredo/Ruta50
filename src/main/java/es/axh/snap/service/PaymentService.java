@@ -1,5 +1,6 @@
 package es.axh.snap.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.json.JSONObject;
@@ -40,25 +41,24 @@ public class PaymentService {
 	public BundleService bundleService;
 	
 	
-	public PaymentInfo pay(CreditCard creditCard, String bundleId, Integer level, Integer numberOfPeople) {
+	public PaymentInfo pay(CreditCard creditCard, String bundleId, Double maxPrecio, Integer numberOfPeople) {
 		Bundle bundle = bundleRepository.findOne(bundleId);
 		
 		PaymentInfo paymentInfo = new PaymentInfo();
 		paymentInfo.setCreditCard(creditCard);
 		paymentInfo.setBundle(bundle);
-		paymentInfo.setLevel(level);
 		paymentInfo.setNumberOfPeople(numberOfPeople);
+		paymentInfo.setMaxPrecio(maxPrecio);
+		paymentInfo.setAmount(maxPrecio * numberOfPeople); 
+				
+		List<Route> rutas = bundleService.routesByBundlePrice(bundle, maxPrecio);
+		paymentInfo.setRoutesTodo(rutas);
+				
 		
 		AuthorizeAndCaptureTransaction authorizeAndCaptureTransaction = new AuthorizeAndCaptureTransaction();
 		JSONObject snapResponse = snapService.pay(authorizeAndCaptureTransaction);
 		
 		paymentInfo.setSnapResponse(snapResponse);
-				
-		List<Route> rutas = bundleService.routesByBundleNumber(bundleId, level);
-		paymentInfo.setRoutesTodo(rutas);
-		
-		Integer i = rutas.size()-1 < 0 ? rutas.size()-1 : 0;
-		paymentInfo.setAmount(rutas.get(i).getPrice() * numberOfPeople);
 				
 		return paymentInfo;
 	}
