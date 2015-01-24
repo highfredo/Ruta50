@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import es.axh.snap.controllers.dto.PayDTO;
 import es.axh.snap.domain.CreditCard;
 import es.axh.snap.domain.PaymentInfo;
 import es.axh.snap.service.PaymentService;
@@ -20,11 +21,9 @@ public class PaymentResource {
 	private PaymentService paymentService;
 	
 	@RequestMapping(value = "/pay", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public PaymentInfo pay(@RequestBody CreditCard creditCard, @RequestParam String bundleId,
-    		@RequestParam Double maxPrecio,
-    		@RequestParam(defaultValue="1") Integer numberOfPeople) {
+    public PaymentInfo pay(@RequestBody PayDTO payDto) {
 		
-        return paymentService.pay(creditCard, bundleId, maxPrecio, numberOfPeople);
+        return paymentService.pay(payDto.getCreditCard(), payDto.getBundleId(), payDto.getMaxPrecio(), payDto.getNumberOfPeople());
     }
 
 }
