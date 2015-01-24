@@ -6,6 +6,7 @@ import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,7 +23,7 @@ public class BundleResource {
 	@Inject
 	private BundleService bundleService;
 
-	@RequestMapping(value = "/public/bundles", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/public/bundle", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Bundle> findAll() {
 		return bundleService.findAll();
 	}
@@ -33,9 +34,8 @@ public class BundleResource {
 //		return bundleService.findByQuery(query);
 //	}
 
-	@RequestMapping(value = "/bundle/view/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	@RolesAllowed(AuthoritiesConstants.USER)
-	public Bundle view(@RequestParam(value = "id") String id) {
+	@RequestMapping(value = "public/bundle/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public Bundle view(@PathVariable String id) {
 		return bundleService.view(id);
 	}
 
@@ -46,13 +46,13 @@ public class BundleResource {
 	}
 	
 	@RequestMapping(value = "/bundle/edit/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	@RolesAllowed(AuthoritiesConstants.USER)
-	public Bundle edit(@RequestParam(value = "id") String id) {
+	@RolesAllowed(AuthoritiesConstants.GUIDE)
+	public Bundle edit(@PathVariable String id) {
 		return bundleService.edit(id);
 	}
 	
 	@RequestMapping(value = "/bundle/edit", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-	@RolesAllowed(AuthoritiesConstants.USER)
+	@RolesAllowed(AuthoritiesConstants.GUIDE)
 	public Bundle save(@RequestParam(value = "bundle") Bundle bundle) {
 		return bundleService.save(bundle);
 	}

@@ -9,6 +9,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper=false)
 public class Route {
 
+	private @TextIndexed String name;
 	private @TextIndexed String description;
 	private Double price;
 	private String photo;
