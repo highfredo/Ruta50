@@ -1,5 +1,6 @@
 package es.axh.snap.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.security.RolesAllowed;
@@ -35,26 +36,46 @@ public class BundleResource {
 //	}
 
 	@RequestMapping(value = "public/bundle/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public Bundle view(@PathVariable String id) {
-		return bundleService.view(id);
+	public List<Bundle> view(@PathVariable String id) {
+		Bundle bundle = bundleService.view(id);
+		
+		List<Bundle> bundles = new ArrayList<Bundle>();
+		bundles.add(bundle);
+		
+		return bundles;
 	}
 
 	@RequestMapping(value = "/bundle/create", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	@RolesAllowed(AuthoritiesConstants.GUIDE)
-	public Bundle create() {
-		return bundleService.create();
+	public List<Bundle> create() {
+		Bundle bundle = bundleService.create();
+		
+		List<Bundle> bundles = new ArrayList<Bundle>();
+		bundles.add(bundle);
+		
+		return bundles;
 	}
 	
 	@RequestMapping(value = "/bundle/edit/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	@RolesAllowed(AuthoritiesConstants.GUIDE)
-	public Bundle edit(@PathVariable String id) {
-		return bundleService.edit(id);
+	public List<Bundle> edit(@PathVariable String id) {
+		Bundle bundle = bundleService.edit(id);
+		
+		List<Bundle> bundles = new ArrayList<Bundle>();
+		bundles.add(bundle);
+		
+		return bundles;
 	}
 	
 	@RequestMapping(value = "/bundle/edit", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 	@RolesAllowed(AuthoritiesConstants.GUIDE)
-	public Bundle save(@RequestParam(value = "bundle") Bundle bundle) {
-		return bundleService.save(bundle);
+	public List<Bundle> save(@RequestParam(value = "bundle") Bundle bundle) {
+		bundle = bundleService.save(bundle);
+		
+		List<Bundle> bundles = new ArrayList<Bundle>();
+		bundles.add(bundle);
+		
+		return bundles;
 	}
 
 }
