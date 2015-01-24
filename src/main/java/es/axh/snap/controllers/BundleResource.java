@@ -1,6 +1,7 @@
 package es.axh.snap.controllers;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import javax.annotation.security.RolesAllowed;
@@ -38,6 +39,8 @@ public class BundleResource {
 	@RequestMapping(value = "public/bundle/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Bundle> view(@PathVariable String id) {
 		Bundle bundle = bundleService.view(id);
+		
+		Collections.sort(bundle.getRoutes());
 		
 		List<Bundle> bundles = new ArrayList<Bundle>();
 		bundles.add(bundle);
