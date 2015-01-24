@@ -16,3 +16,4 @@ build
 main/webapp/bower_components
 main/webapp/lib
 
+/bin/
