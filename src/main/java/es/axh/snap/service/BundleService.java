@@ -1,6 +1,8 @@
 package es.axh.snap.service;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -44,6 +46,35 @@ public class BundleService {
 
 	public Bundle view(String id) {
 		return bundleRepository.findOne(id);
+	}
+	
+	/**
+	 * @author Ale
+	 * No estoy muy contento con este método, peeeeeero..
+	 */
+	public List<Route> routesByBundleNumber(String bundleId, Integer bundleNumber){
+		List<Double> prices = new ArrayList<Double>();
+		Bundle bundle = bundleRepository.findOne(bundleId);
+		
+		for(Route route : bundle.getRoutes()){
+			prices.add(route.getPrice());
+		}
+		
+		prices = new ArrayList<Double>(new HashSet<Double>(prices));
+		Collections.sort(prices);
+		
+		Double price = prices.get(bundleNumber);
+		
+		List<Route> routes = new ArrayList<Route>();
+		
+		for(Route route : bundle.getRoutes()){
+			if(price.compareTo(route.getPrice()) > 0){
+				routes.add(route);
+			}
+		}
+		
+		return routes;
+		
 	}
 	
 }

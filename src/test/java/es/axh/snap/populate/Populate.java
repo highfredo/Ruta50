@@ -1,7 +1,6 @@
 package es.axh.snap.populate;
 
 import java.net.UnknownHostException;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.data.authentication.UserCredentials;
