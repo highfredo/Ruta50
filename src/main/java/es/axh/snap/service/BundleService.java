@@ -75,7 +75,7 @@ public class BundleService {
 		List<Route> routes = new ArrayList<Route>();
 		
 		for(Route route : bundle.getRoutes()){
-			if(price.compareTo(route.getPrice()) > 0){
+			if(price.compareTo(route.getPrice()) >= 0){
 				routes.add(route);
 			}
 		}
