@@ -5,7 +5,7 @@ angular.module('ruta50App')
         $stateProvider
             .state('creditCard', {
                 parent: 'site',
-                url: '/compra/:id/:price/:numberOfPerson',
+                url: '/compra/:id/:price/:numberOfPerson/:fecha',
                 data: {
                     roles: []
                 },

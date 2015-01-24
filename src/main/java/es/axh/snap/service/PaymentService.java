@@ -58,7 +58,7 @@ public class PaymentService {
 		AuthorizeAndCaptureTransaction authorizeAndCaptureTransaction = new AuthorizeAndCaptureTransaction();
 		JSONObject snapResponse = snapService.pay(authorizeAndCaptureTransaction);
 		
-		paymentInfo.setSnapResponse(snapResponse);
+		// paymentInfo.setSnapResponse(snapResponse);
 				
 		return paymentInfo;
 	}

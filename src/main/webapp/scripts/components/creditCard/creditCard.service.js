@@ -2,7 +2,7 @@
 
 angular.module('ruta50App')
 .factory('CreditCard', function ($resource) {
-    return $resource('api/payment/creditCard/:id', {}, {
+    return $resource('api/payment/:id', {}, {
       
     });
 });

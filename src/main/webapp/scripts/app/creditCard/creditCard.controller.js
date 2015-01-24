@@ -20,12 +20,20 @@ angular.module('ruta50App')
                 	postalCode: $scope.postalCode,
                 	country: $scope.country,
                 
-                }}).then(function () {
+                }}, function() {
+                	alert("Su compra se ha realizado con exito")
+                    window.location = "/";
+                })
+                
+                /*.then(function () {
                     $scope.payError = false;
                     $rootScope.back();
+                    
+                    alert("Su compra se ha realizado con exito")
+                    window.location = "/";
                 }).catch(function () {
                     $scope.payError = true;
-                });
+                });*/
             };
             
             

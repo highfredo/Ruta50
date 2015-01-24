@@ -20,7 +20,7 @@ public class PaymentResource {
 	@Autowired
 	private PaymentService paymentService;
 	
-	@RequestMapping(value = "/pay", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/payment", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public PaymentInfo pay(@RequestBody PayDTO payDto) {
 		
         return paymentService.pay(payDto.getCreditCard(), payDto.getBundleId(), payDto.getMaxPrecio(), payDto.getNumberOfPeople());

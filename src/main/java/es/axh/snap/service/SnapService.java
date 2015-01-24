@@ -59,13 +59,13 @@ public class SnapService {
 		HttpEntity<AuthorizeAndCaptureTransaction> entity = 
 				new HttpEntity<AuthorizeAndCaptureTransaction>(authorizeAndCaptureTransaction, headers);
 		
-		ResponseEntity<String> response = restTemplate.postForEntity(PAY_URL, entity, String.class);
+		// ResponseEntity<String> response = restTemplate.postForEntity(PAY_URL, entity, String.class);
 		JSONObject result = null;
-		try {
+		/*try {
 			result = new JSONObject(response.getBody());
 		} catch (JSONException e) {
 			e.printStackTrace();
-		}
+		}*/
 				
 		return result; 
 	}

@@ -4,10 +4,11 @@
 	
 	Precio <input type="number" ng-model = "price"  />
 	Numero de personas: <input type="number" ng-model = "numberOfPerson"  />
+	Fecha <input type="date" ng-model = "fecha">
 	
-	Precio total = {{price * numberOfPerson}}
+	Precio total = {{price * numberOfPerson || 0}}&euro;
 	
-	<a class='btn btn-default' ng-href="/#/compra/{{bundle.id}}/{{price}}/{{numberOfPerson}}">Comprar</a>
+	<a class='btn btn-default' ng-href="/#/compra/{{bundle.id}}/{{price}}/{{numberOfPerson}}/{{fecha}}">Comprar</a>
 </div>
 
 <div class="row">
