@@ -1,21 +1,14 @@
 package es.axh.snap.service;
 
-import java.io.UnsupportedEncodingException;
-import java.util.Base64;
-
 import org.json.JSONObject;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.DefaultResponseErrorHandler;
 import org.springframework.web.client.RestTemplate;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Lists;
 
 import es.axh.snap.domain.snap.AuthorizeAndCaptureTransaction;
@@ -47,7 +40,7 @@ public class SnapService {
 	
 	public JSONObject pay(AuthorizeAndCaptureTransaction authorizeAndCaptureTransaction) {
 		String sessionToken = this.login() + ":";  
-		sessionToken = Base64.getEncoder().encodeToString(sessionToken.getBytes());
+		// sessionToken = Base64.getEncoder().encodeToString(sessionToken.getBytes());
 		RestTemplate restTemplate = new RestTemplate();
 
 		HttpHeaders headers = new HttpHeaders();
