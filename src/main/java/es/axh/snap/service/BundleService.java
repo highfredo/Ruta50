@@ -73,6 +73,8 @@ public class BundleService {
 			}
 		}
 		
+		Collections.sort(routes);
+		
 		return routes;
 		
 	}
